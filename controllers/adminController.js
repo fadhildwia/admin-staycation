@@ -158,7 +158,7 @@ module.exports = {
     } catch (error) {
       req.flash('alertMessage', `${error.message}`);
       req.flash('alertStatus', 'danger');
-      res.redirect('/admin/bank');
+      res.redirect('/admin/bank')
     }
   },
 
@@ -198,7 +198,7 @@ module.exports = {
         bank.name = name;
         bank.nameBank = nameBank;
         bank.nomorRekening = nomorRekening;
-        bank.imageUrl = `images/${req.file.filename}`;
+        bank.imageUrl = `images/${req.file.filename}`
         await bank.save();
         req.flash('alertMessage', 'Success Update Bank');
         req.flash('alertStatus', 'success');
@@ -440,7 +440,7 @@ module.exports = {
 
       const item = await Item.findOne({ _id: itemId });
       item.featureId.push({ _id: feature._id });
-      await item.save();
+      await item.save()
       req.flash('alertMessage', 'Success Add Feature');
       req.flash('alertStatus', 'success');
       res.redirect(`/admin/item/show-detail-item/${itemId}`);
@@ -521,7 +521,7 @@ module.exports = {
 
       const item = await Item.findOne({ _id: itemId });
       item.activityId.push({ _id: activity._id });
-      await item.save();
+      await item.save()
       req.flash('alertMessage', 'Success Add Activity');
       req.flash('alertStatus', 'success');
       res.redirect(`/admin/item/show-detail-item/${itemId}`);
@@ -547,7 +547,7 @@ module.exports = {
         await fs.unlink(path.join(`public/${activity.imageUrl}`));
         activity.name = name;
         activity.type = type;
-        activity.imageUrl = `images/${req.file.filename}`;
+        activity.imageUrl = `images/${req.file.filename}`
         await activity.save();
         req.flash('alertMessage', 'Success Update activity');
         req.flash('alertStatus', 'success');

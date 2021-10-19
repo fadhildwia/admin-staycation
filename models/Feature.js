@@ -7,7 +7,7 @@ const featureSchema = new mongoose.Schema({
     required: true
   },
   qty: {
-    type: String,
+    type: Number,
     required: true
   },
   imageUrl: {
@@ -20,4 +20,4 @@ const featureSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model("Feature", featureSchema)
+module.exports = mongoose.model('Feature', featureSchema)

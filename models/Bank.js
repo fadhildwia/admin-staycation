@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const bankSchema = new mongoose.Schema({
   nameBank: {
     type: String,
@@ -16,8 +15,8 @@ const bankSchema = new mongoose.Schema({
   },
   imageUrl: {
     type: String,
-    require: true
+    required: true
   }
 })
 
-module.exports = mongoose.model("Bank", bankSchema)
+module.exports = mongoose.model('Bank', bankSchema)

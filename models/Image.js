@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const imageSchema = new mongoose.Schema({
   imageUrl: {
     type: String,
@@ -8,4 +7,4 @@ const imageSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model("Image", imageSchema)
+module.exports = mongoose.model('Image', imageSchema)

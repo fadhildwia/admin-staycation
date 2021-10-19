@@ -6,7 +6,7 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
-// mongoose
+// import mongoose
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://staycation:staycation@cluster0.dsqiz.mongodb.net/db_staycation?retryWrites=true&w=majority', {
   useNewUrlParser: true,
@@ -43,17 +43,17 @@ app.use('/sb-admin-2', express.static(path.join(__dirname, 'node_modules/startbo
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// router admin
+// admin
 app.use('/admin', adminRouter);
 app.use('/api/v1/member', apiRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
